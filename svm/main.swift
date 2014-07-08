@@ -8,5 +8,11 @@
 
 import Foundation
 
-println("Hello, World!")
+let prog: Int[] = [
+    ICONST, 99,
+    PRINT,
+    HALT
+]
 
+let vm = VirtualMachine(program: prog, mem: 0, main: 0)
+vm.cpu()
