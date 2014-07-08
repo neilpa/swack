@@ -10,6 +10,7 @@
 		D8F1AA46196BA8CE00CC5499 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1AA45196BA8CE00CC5499 /* main.swift */; };
 		D8F1AA4D196BA9F600CC5499 /* VirtualMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1AA4C196BA9F600CC5499 /* VirtualMachine.swift */; };
 		D8F1AA4F196BAD1500CC5499 /* OpCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1AA4E196BAD1500CC5499 /* OpCode.swift */; };
+		D8F1AA51196BB48C00CC5499 /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1AA50196BB48C00CC5499 /* Instruction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D8F1AA42196BA8CE00CC5499 /* svm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = svm; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8F1AA42196BA8CE00CC5499 /* swack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swack; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F1AA45196BA8CE00CC5499 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D8F1AA4C196BA9F600CC5499 /* VirtualMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualMachine.swift; sourceTree = "<group>"; };
 		D8F1AA4E196BAD1500CC5499 /* OpCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpCode.swift; sourceTree = "<group>"; };
+		D8F1AA50196BB48C00CC5499 /* Instruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +47,10 @@
 		D8F1AA39196BA8CE00CC5499 = {
 			isa = PBXGroup;
 			children = (
-				D8F1AA44196BA8CE00CC5499 /* svm */,
+				D8F1AA45196BA8CE00CC5499 /* main.swift */,
+				D8F1AA4C196BA9F600CC5499 /* VirtualMachine.swift */,
+				D8F1AA50196BB48C00CC5499 /* Instruction.swift */,
+				D8F1AA4E196BAD1500CC5499 /* OpCode.swift */,
 				D8F1AA43196BA8CE00CC5499 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,27 +58,17 @@
 		D8F1AA43196BA8CE00CC5499 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8F1AA42196BA8CE00CC5499 /* svm */,
+				D8F1AA42196BA8CE00CC5499 /* swack */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D8F1AA44196BA8CE00CC5499 /* svm */ = {
-			isa = PBXGroup;
-			children = (
-				D8F1AA45196BA8CE00CC5499 /* main.swift */,
-				D8F1AA4C196BA9F600CC5499 /* VirtualMachine.swift */,
-				D8F1AA4E196BAD1500CC5499 /* OpCode.swift */,
-			);
-			path = svm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8F1AA41196BA8CE00CC5499 /* svm */ = {
+		D8F1AA41196BA8CE00CC5499 /* swack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8F1AA49196BA8CE00CC5499 /* Build configuration list for PBXNativeTarget "svm" */;
+			buildConfigurationList = D8F1AA49196BA8CE00CC5499 /* Build configuration list for PBXNativeTarget "swack" */;
 			buildPhases = (
 				D8F1AA3E196BA8CE00CC5499 /* Sources */,
 				D8F1AA3F196BA8CE00CC5499 /* Frameworks */,
@@ -83,9 +78,9 @@
 			);
 			dependencies = (
 			);
-			name = svm;
-			productName = svm;
-			productReference = D8F1AA42196BA8CE00CC5499 /* svm */;
+			name = swack;
+			productName = swack;
+			productReference = D8F1AA42196BA8CE00CC5499 /* swack */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D8F1AA3D196BA8CE00CC5499 /* Build configuration list for PBXProject "svm" */;
+			buildConfigurationList = D8F1AA3D196BA8CE00CC5499 /* Build configuration list for PBXProject "swack" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,7 +109,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8F1AA41196BA8CE00CC5499 /* svm */,
+				D8F1AA41196BA8CE00CC5499 /* swack */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +121,7 @@
 			files = (
 				D8F1AA46196BA8CE00CC5499 /* main.swift in Sources */,
 				D8F1AA4F196BAD1500CC5499 /* OpCode.swift in Sources */,
+				D8F1AA51196BB48C00CC5499 /* Instruction.swift in Sources */,
 				D8F1AA4D196BA9F600CC5499 /* VirtualMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,21 +207,21 @@
 		D8F1AA4A196BA8CE00CC5499 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = swack;
 			};
 			name = Debug;
 		};
 		D8F1AA4B196BA8CE00CC5499 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = swack;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8F1AA3D196BA8CE00CC5499 /* Build configuration list for PBXProject "svm" */ = {
+		D8F1AA3D196BA8CE00CC5499 /* Build configuration list for PBXProject "swack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F1AA47196BA8CE00CC5499 /* Debug */,
@@ -234,7 +230,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8F1AA49196BA8CE00CC5499 /* Build configuration list for PBXNativeTarget "svm" */ = {
+		D8F1AA49196BA8CE00CC5499 /* Build configuration list for PBXNativeTarget "swack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F1AA4A196BA8CE00CC5499 /* Debug */,

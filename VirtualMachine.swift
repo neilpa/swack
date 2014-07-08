@@ -1,6 +1,6 @@
 //
 //  VirtualMachine.swift
-//  svm
+//  Swack
 //
 //  Created by Neil Pankey on 7/7/14.
 //  Copyright (c) 2014 Neil Pankey. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Simple virtual machine written in Swift
+// Simple stack based virtual machine written in Swift
 // https://www.youtube.com/watch?v=OjaAToVkoTw
 
 class VirtualMachine {
@@ -24,7 +24,7 @@ class VirtualMachine {
     // Stack
     var stack: Int[] = Int[](count: 4096, repeatedValue: 0)
     
-    init (program: Int[], mem: Int, main: Int) {
+    init(program: Int[], mem: Int, main: Int) {
         // Store our program and allocate main memory
         code = program
         data = Int[](count: mem, repeatedValue: 0)
@@ -34,7 +34,7 @@ class VirtualMachine {
         sp = -1
     }
     
-    // Runs the fetch-decode-execute cycle for our simple vm
+    // Runs the fetch-decode-execute cycle for our VM
     func cpu() -> () {
         while (ip < code.count) {
             let opcode = code[ip++]
