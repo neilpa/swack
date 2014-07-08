@@ -19,10 +19,15 @@ class VirtualMachine {
 
     // Registers
     var ip: Int // instruction pointer
-    var sp: Int // stack pointer
+    var sp: Int = -1 // stack pointer
+    var fp: Int = -1 // frame pointer
     
     // Stack
     var stack: Int[] = Int[](count: 4096, repeatedValue: 0)
+    
+    convenience init(program: Int[]) {
+        self.init(program: program, mem: 0, main: 0)
+    }
     
     init(program: Int[], mem: Int, main: Int) {
         // Store our program and allocate main memory
@@ -31,7 +36,6 @@ class VirtualMachine {
 
         // Setup our registers
         ip = main
-        sp = -1
     }
     
     // Runs the fetch-decode-execute cycle for our VM
@@ -39,18 +43,61 @@ class VirtualMachine {
         while (ip < code.count) {
             let opcode = code[ip++]
             switch opcode {
+            
+            case IADD:
+                let b = stack[sp--]
+                let a = stack[sp--]
+                stack[++sp] = a + b
+                
+            case ISUB:
+                let b = stack[sp--]
+                let a = stack[sp--]
+                stack[++sp] = a - b
 
-            // Push a constant onto the stack
+            case IMUL:
+                let b = stack[sp--]
+                let a = stack[sp--]
+                stack[++sp] = a * b
+
+            case ILT:
+                let b = stack[sp--]
+                let a = stack[sp--]
+                stack[++sp] = a < b ? 1 : 0
+            
+            case ILT:
+                let b = stack[sp--]
+                let a = stack[sp--]
+                stack[++sp] = a == b ? 1 : 0
+                
+            case BR:
+                break
+            
+            case BRT:
+                break
+                
+            case BRF:
+                break
+
             case ICONST:
                 let operand = code[ip++]
                 stack[++sp] = operand
+                
+            case LOAD:
+                break
 
-            // Print the top of the stack
+            case GLOAD:
+                break
+
+            case STORE:
+                break
+            
+            case GSTORE:
+                break
+                
             case PRINT:
                 let operand = stack[sp--]
                 println(operand)
 
-            // Halt execution
             case HALT:
                 break
 

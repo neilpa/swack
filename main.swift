@@ -10,9 +10,15 @@ import Foundation
 
 let prog: Int[] = [
     ICONST, 99,
-    PRINT,
+    ICONST, 88,
+    ISUB,
+    ICONST, 2,
+    IMUL,
+    ICONST, 6,
+    IADD,
+    PRINT,  // should print 28
     HALT
 ]
 
-let vm = VirtualMachine(program: prog, mem: 0, main: 0)
+let vm = VirtualMachine(program: prog)
 vm.cpu()
