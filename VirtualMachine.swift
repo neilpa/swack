@@ -25,6 +25,9 @@ class VirtualMachine {
     // Stack
     var stack: Int[] = Int[](count: 4096, repeatedValue: 0)
     
+    // Debug tracing
+    var trace: Bool = false
+    
     convenience init(program: Int[]) {
         self.init(program: program, mem: 0, main: 0)
     }
@@ -41,6 +44,10 @@ class VirtualMachine {
     // Runs the fetch-decode-execute cycle for our VM
     func cpu() -> () {
         while (ip < code.count) {
+            if (trace) {
+                disassemble()
+            }
+
             let opcode = code[ip++]
             switch opcode {
             
@@ -106,5 +113,14 @@ class VirtualMachine {
 
             }
         }
+    }
+    
+    func disassemble() -> () {
+        let instr = instructions[code[ip]]
+
+        let operands = code[ip+1...ip+instr.operands].map { String($0) }
+        let concat = join(" ", operands)
+
+        println("\(ip): \(instr.name) \(concat)")
     }
 }

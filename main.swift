@@ -21,4 +21,5 @@ let prog: Int[] = [
 ]
 
 let vm = VirtualMachine(program: prog)
+vm.trace = true
 vm.cpu()
